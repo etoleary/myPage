@@ -1,2 +1,2 @@
 # myPage
-First github repository 
+First Github repository created by following Curran Kelleher's tutorial. 
