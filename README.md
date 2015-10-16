@@ -1,2 +1,3 @@
 # myPage
-First Github repository created by following Curran Kelleher's tutorial. 
+Welcome to my page.
+This site is used to host my GUI Programming I assignments.
