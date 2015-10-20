@@ -1,0 +1,100 @@
+html{
+    font-size: 12px;
+}
+
+body{
+	padding:0;
+	margin:0;
+	background-color:#eee;
+	color:#000;
+	font-family:"Bitstream Vera Sans",Verdana,Arial,sans-serif;
+	min-width:780px;
+	margin:auto;
+}
+
+#allcontent {
+  width: 800px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #eee;  /* grey/white */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#left{
+    margin-left: 30px;
+    float: left;
+    width: 120px;
+}
+
+#right{
+    float: right;
+    width: 580px;
+}
+
+/*colors all astresiks red*/
+span[id ^= error]{
+    color: #FF0000;/*red*/
+}
+
+/*color error message red*/
+#errorMessage{
+    color: #FF0000; /*red*/
+}
+
+/*places table below form and adds scroll bar if table overflows*/ 
+#table{
+    overflow: auto;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    width: 750px;
+    clear: both; /*clear floats, place div below*/
+}
+
+/*show single border around cells instead of individual boxes*/
+table{
+    border-collapse: collapse;
+}
+
+/*format data cells*/
+td{
+    color: #000000; /*black*/
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/*styles the first row of data*/
+.topRow{
+    font-weight: 600;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px; 
+    border-left-color: #FFFFFF; /*white*/
+    border-top-color: #000000; /*black*/
+    border-bottom-color: #000000; /*black*/
+    background-color: #000000; /*black*/
+    color: #FFFFFF; /*white*/
+}
+
+/*styles first column of data*/
+tr td:first-child{
+    font-weight: 600;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px; 
+    border-right-color: #FFFFFF; /*white*/
+    border-top-color: #000000; /*black*/
+    border-bottom-color: #FFFFFF; /*white*/
+    background-color: #000000; /*black*/
+    color: #FFFFFF; /*white*/
+}
+
+/*styles the upper left data cell*/
+tbody tr:first-child td:first-child {
+  background-color: #000000; /*black*/
+  border-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF; /*white*/ 
+}
