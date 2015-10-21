@@ -75,20 +75,18 @@ function CreateNumberArray(start, end) {
     // calculate the total length of the array
     var num = Math.abs(end - start);
 
-    var increment;
-    // if the start of the row is less than the end, we will be incrementing
-    if (start < end) {
-        increment = 1;
+    var increment = 1;
+    /*will always fill the top row from least to greatest, 
+     * even if the user enters numbers from greatest to least (row start > row end)*/
+    if (start > end){
+        end = [start, start = end][0]; 
     }
-    // otherwise we will decrement
-    else {
-        increment = -1;
-    }
+    
     // fill a vector with all the elements of the starting row
     for (var i = 0; i <= num; i++)
     {
-        array[i] = start;
-        start = start + increment;
+            array[i] = start;
+            start = start + increment;
     }
 
     // return the created array
@@ -117,7 +115,7 @@ function PrintTable(rowArray, colArray) {
         var rowContent = "<tr><td>" + rowArray[i] + "</td>";
         for (var k = 0, m = colArray.length; k < m; k++)
         {
-            rowContent += "<td>" + rowArray[j] * colArray[k] + "</td>";
+            rowContent += "<td>" + rowArray[i] * colArray[k] + "</td>";
         }
         rowContent += "</tr>";
         $("#formOutput").append(rowContent);
