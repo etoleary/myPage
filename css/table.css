@@ -1,24 +1,32 @@
+/*
+  File: /~eoleary/css/table.css
+  Author: Evan O'Leary
+  Contact: evan_oleary@student.uml.edu
+  Created on: October 18, 2015 
+  Updated on: October 20, 2015
+  This file contains the styling information for the dynamic table in assignment 6.
+*/
 html{
     font-size: 12px;
 }
 
 body{
-	padding:0;
-	margin:0;
-	background-color:#eee;
-	color:#000;
-	font-family:"Bitstream Vera Sans",Verdana,Arial,sans-serif;
-	min-width:780px;
-	margin:auto;
+    padding:0;
+    margin:0;
+    background-color:#eee;
+    color:#000;
+    font-family:"Bitstream Vera Sans",Verdana,Arial,sans-serif;
+    min-width:780px;
+    margin:auto;
 }
 
 #allcontent {
-  width: 800px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-color: #eee;  /* grey/white */
-  margin-left: auto;
-  margin-right: auto;
+    width: 800px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #eee;  /* grey/white */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #left{
@@ -93,8 +101,8 @@ tr td:first-child{
 
 /*styles the upper left data cell*/
 tbody tr:first-child td:first-child {
-  background-color: #000000; /*black*/
-  border-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #FFFFFF; /*white*/ 
+    background-color: #000000; /*black*/
+    border-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #FFFFFF; /*white*/ 
 }
