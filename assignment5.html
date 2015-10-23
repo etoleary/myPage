@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+      File: /~eoleary/assignment5.html
+      This file reads in text from a JSON file and displays it.
+      Author: Evan O'Leary
+      Contact: evan_oleary@student.uml.edu 
+      Created on: September 10, 2015 
+      Updated on: October 22, 2015 -->
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="css/assignment5.css">
+        <title>Assignment 5: Formatting Dynamic Text</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <!--
+  load jQuery library from the Google Content Delivery Network (CDN)
+  see http://encosia.com/3-reasons-why-you-should-let-google-host-jquery-for-you/
+  however, note that you obviously must be online for this to work
+  alternatively, you can download jQuery and store it locally from
+     http://jquery.com/download/
+-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- load the JSON file containing the text of Lincoln's Gettysburg address -->
+<script type="text/javascript">
+  // this function will run after the body has been loaded
+  jQuery(document).ready( function() {
+    jQuery.get( "Time.json", function( data ) {
+              placeContent( data ) ;  // construct output from the data read
+    }, "json" );  // be sure to include this third parameter for weblab.cs.uml.edu
+      });
+    </script>
+        
+        <!-- script to place JSON text in the placeholder on this page -->
+        <script type="text/javascript">
+            // N.B.  This version *does* apply the CSS.
+            function placeContent( story ) {
+                var strContent = "";
+                
+                // create dynamic content from JSON
+                strContent += "<h1 class='song-title'>" + story.title + "</h1>" ;
+                strContent += "<span class='artist'>by " + " " + story.artist + "</span>" ;
+                strContent += "<br>" + "<br>";
+                strContent += "<span class='album'>" + story.album + "</span>" ;
+                strContent += "<br>" + "<br>";
+                
+                // loop through all the paragraphs and sentences
+                for ( var para = 0 ; para < story.text.paragraphs.length ; para++ ) {
+                    strContent += "<br>" + "<p class = 'lyrics'>";
+                    for ( var sent = 0 ; sent < story.text.paragraphs[para].length ; sent++ ) {
+                        strContent += story.text.paragraphs[para][sent] + "</p>";
+                    }
+                }
+                
+                // place dynamic content on page
+                // document.getElementById( "content" ).innerHTML = strContent ;
+                $("#content").html( strContent ) ;
+            }
+        </script>
+    </head>
+    <body>
+        <!--allcontent is used to center align the page in the web browser-->
+        <div id = "allcontent">
+    <h1 class="entry-title">Assignment 5: Formatting Dynamic Text</h1>
+            <!--the text extracted from the json file is placed in content-->
+        <div id = "content"></div>
+            <!--start of sidebar styling-->
+            <div id="sidebar">
+                <div class="cover-art"><img src="//coverartarchive.org/release/b84ee12a-09ef-421b-82de-0441a926375b/1611507818-500.jpg" alt="cover art" >
+                </div>
+                
+                <h2 class="listen">Listen</h2>
+                <dl>
+                        <dt>
+                    <a href="https://www.youtube.com/watch?v=abw8W05tzKY" target="_blank">https://www.youtube.com/watch?v=abw8W05tzKY</a>
+                        </dt>
+                    <dd></dd>
+                </dl>
+                
+                <h2 class="release-information">Song Information</h2>
+                <dl class = "properties">
+                    <dt>Title:</dt>
+                    <dd class = "song-title">Time</dd>
+                    <dt>Artist:</dt>
+                    <dd class = "artist">Pink Floyd</dd>
+                     <dt>Album:</dt>
+                    <dd class = "album">Dark Side of the Moon</dd>
+                    <dt>Length:</dt>
+                    <dd class = "length">6:50</dd>
+                </dl>
+                
+                <h2 class="labels">Labels</h2>
+                <dl>
+                    <dt>Harvest</dt>
+                    <dd></dd>
+                </dl>
+                
+                <h2 class="release-date">Release Date</h2>
+                <dl>
+                    <dt>1973-03-24</dt>
+                    <dd></dd>
+                </dl>
+                
+                <h2 class="production">Production Information</h2>
+                <dl class = "properties">
+                    <dt>Remasters:</dt>
+                    <dd class = "remasters">Time ("echoes: the best of pink floyd" remaster) by Pink Floyd</dd>
+                    <dt>Engineer:</dt>
+                    <dd class = "engineer">Alan Parsons</dd>
+                    <dt>Assistant Engineer:</dt>
+                    <dd class = "assistant-engineer">Peter James (sound engineer)</dd>
+                    <dt>Producer:</dt>
+                    <dd class = "producer">Pink Floyd</dd>
+                    <dt>Lead Vocals:</dt>
+                    <dd class = "lead-vocals">David Gilmour and Richard Wright (Pink Floyd keyboardist)</dd>
+                    <dt>Composer:</dt>
+                    <dd class = "composer">David Gilmour, Nick Mason, Roger Waters and Richard Wright (Pink Floyd keyboardist)</dd>
+                    <dt>Lyricist:</dt>
+                    <dd class = "lyricist">Roger Waters</dd>
+                </dl>
+                
+                <h2 class="samples">Samples</h2>
+                    <dl class = "properties">
+                    <dt>Sampled by:</dt>
+                    <dd class = "sampled-song">Looking Down the Barrel of a Gun by Beastie Boys</dd>
+                </dl>
+                </div><!--end of sidebar styling-->
+        </div> <!--end of allcontent-->
+    </body>
+</html>

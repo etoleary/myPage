@@ -1,0 +1,140 @@
+html{
+	font-size:12px;
+}
+
+body{
+	padding:0;
+	margin:0;
+	background-color:#eee;
+	color:#000;
+	font-family:"Bitstream Vera Sans",Verdana,Arial,sans-serif;
+	min-width:780px;
+	margin:auto;
+}
+
+#allcontent {
+  width: 800px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #eee;  /* grey/white */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/*style for the sidebar*/
+#sidebar h2, .sidebar h2{
+    font-size: 1.10rem;
+    margin-left: -5px;
+    color: #D45043;/*red = album cover red*/
+}
+#content, #sidebar{
+    display: table-cell;
+    vertical-align: top;
+}
+#content{
+    padding-right: 16px;
+}
+#sidebar{
+    padding-left: 16px;
+    width: 218px;
+    font-size: 1rem;
+    border-left: 1px solid #ddd;
+}
+#sidebar p{
+    margin-top: 0;
+}
+
+#sidebar .cover-art img,#sidebar .picture img{
+    max-height: 300px;
+    max-width: 218px;
+}
+#sidebar .cover-art-note, #sidebar .picture-note{
+    color: #666;
+    display: block;
+}
+
+dl.properties{
+	margin:0;
+}
+
+dl.properties dt{
+	clear:left;
+	float:left;
+	font-weight:700;
+	padding-right:2pt;
+}
+
+dl.properties dd,dl.properties dt,table.properties tr{
+	line-height:175%;
+}
+
+/*get rid of bullets on lyrics, under Labels, and Release Date*/  
+ul{
+    list-style-type: none;
+}
+
+
+/*listen link styling*/
+a:link {
+    text-decoration: none;
+    color: #FFFDFD;
+    background-color: #000;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #FFFDFD;
+    background-color: #000;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #000;
+}
+
+a:active {
+    text-decoration: none;
+    color: #FFFDFD;
+    background-color: #000;
+}
+
+/*black box with red font = styling on album cover*/
+span.artist{
+    padding-top: 2px;
+    padding-right: 3px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    font-weight: 700;
+    background-color: #000;
+    color: #FFFDFD;
+}
+
+/*black box with white font*/
+span.album{
+    padding-top: 2px;
+    padding-right: 3px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    font-weight: 700;
+    background-color: #000;
+    color: #FFFDFD;
+}
+
+p:first-line{
+    font-weight: 700;
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
