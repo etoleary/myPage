@@ -12,20 +12,28 @@ $("#frm").validate({
 //rules to make sure all fields are numbers
 rules:{
 rowStart:{
-required: true,
-        number: true
+    required: true,
+    number: true,
+    min: -10,
+    max:10
 },
 rowEnd:{
     required: true,
-    number: true
+    number: true,
+    min: -10,
+    max:10
 },
 colStart:{
     required: true,
-    number: true
+    number: true,
+    min: -10,
+    max:10
 },
 colEnd:{
     required: true,
-    number: true
+    number: true,
+    min: -10,
+    max:10
 }
 },
 //add custom error messages and highlight errors
@@ -38,8 +46,14 @@ messages:{
     number:function(){
         highlightError("rowStart");
         return "Please provide a number for Row Start";
-    }
     },
+    min: function(){
+        return "Please enter a number greater than or equal to -10";
+    },
+    max: function(){
+        return "Please enter a number less than or equal to 10";
+    }
+},
 rowEnd:{
     required: function(){
         highlightError("rowEnd");
@@ -48,7 +62,13 @@ rowEnd:{
     number: function(){
         highlightError("rowEnd");
         return "Please provide a number for Row End";
-}
+    },
+    min: function(){
+        return "Please enter a number greater than or equal to -10";
+    },
+    max: function(){
+        return "Please enter a number less than or equal to 10";
+    }
 },
 colStart:{
     required: function(){
@@ -58,7 +78,13 @@ colStart:{
     number: function(){
         highlightError("colStart");
         return "Please provide a number for Column Start";
-}
+    },
+    min: function(){
+        return "Please enter a number greater than or equal to -10";
+    },
+    max: function(){
+        return "Please enter a number less than or equal to 10";
+    }
 },
 colEnd:{
     required: function(){
@@ -68,7 +94,13 @@ colEnd:{
     number: function(){
         highlightError("colEnd");
         return "Please provide a number for Column End";
-}
+    },
+    min: function(){
+        return "Please enter a number greater than or equal to -10";
+    },
+    max: function(){
+        return "Please enter a number less than or equal to 10";
+    }
 }
 },
 
