@@ -48,11 +48,11 @@ messages:{
         return "Please provide a number for Row Start";
     },
     min: function(){
-        highlightError("colEnd");
+        highlightError("rowStart");
         return "Please enter a number greater than or equal to -10";
     },
     max: function(){
-        highlightError("colEnd");
+        highlightError("rowStart");
         return "Please enter a number less than or equal to 10";
     }
 },
@@ -66,11 +66,11 @@ rowEnd:{
         return "Please provide a number for Row End";
     },
     min: function(){
-        highlightError("colEnd");
+        highlightError("rowEnd");
         return "Please enter a number greater than or equal to -10";
     },
     max: function(){
-        highlightError("colEnd");
+        highlightError("rowEnd");
         return "Please enter a number less than or equal to 10";
     }
 },
@@ -84,11 +84,11 @@ colStart:{
         return "Please provide a number for Column Start";
     },
     min: function(){
-        highlightError("colEnd");
+        highlightError("colStart");
         return "Please enter a number greater than or equal to -10";
     },
     max: function(){
-        highlightError("colEnd");
+        highlightError("colStart");
         return "Please enter a number less than or equal to 10";
     }
 },
