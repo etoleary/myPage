@@ -164,23 +164,23 @@ function CreateNumberArray(start, end) {
     // calculate the total length of the array
     var num = Math.abs(end - start);
     
-    var increment = 1; 
+    var increment;
     
-    /*will always fill the top row from least to greatest, 
-     * even if the user enters numbers from greatest to least (row start > row end)*/
-    if (start > end){
-        end = [start, start = end][0]; 
+    // if the start of the row is less than the end, we will be incrementing
+    if (start < end) {
+        increment = 1;
     }
-    
+    // otherwise we will decrement
+    else {
+        increment = -1;
+    }
     // fill a vector with all the elements of the starting row
     for (var i = 0; i <= num; i++)
     {
-            array[i] = start;
-            //try changing to start = start ++;
-            //because increment does not change from 1 to -1 anymore do to switch
-            start = start + increment;
+        array[i] = start;
+        start = start + increment;
     }
-
+    
     // return the created array
     return array;
 }
