@@ -116,8 +116,7 @@ function SubmitForm() {
 
 
         //build a multiplication table and print it to the page
-        var tableContent = CreateTable(rowArray, colArray);
-        $('#table').append(tableContent);
+        CreateTable(rowArray, colArray);
 }//end of SubmitForm
 
 /*
@@ -159,24 +158,24 @@ function CreateNumberArray(start, end) {
 function CreateTable(rowArray, colArray) {
 
     // first print the top row by itself
-    var content =  "<table><tbody id='formOutput'><tr><td></td>";
+    var toprow = "<tr><td></td>";
     for (var a = 0, b = colArray.length; a < b; a++)
     {
-        content += "<td class='topRow'>" + colArray[a] + "</td>";
+        toprow += "<td class='topRow'>" + colArray[a] + "</td>";
     }
-    content += "</tr>";
+    toprow += "</tr>";
+    $("#formOutput").append(toprow);
 
     // now build the rest of the multiplication table by traversing each row
     // and each column in each row, and multiplying the values from the corresponding arrays
     for (var i = 0, j = rowArray.length; i < j; i++)
     {
-        content = "<tr><td>" + rowArray[i] + "</td>";
+        var rowContent = "<tr><td>" + rowArray[i] + "</td>";
         for (var k = 0, m = colArray.length; k < m; k++)
         {
-            content += "<td>" + rowArray[i] * colArray[k] + "</td>";
+            rowContent += "<td>" + rowArray[i] * colArray[k] + "</td>";
         }
-           content += "</tr>";
+        rowContent += "</tr>";
+        $("#formOutput").append(rowContent);
     }
-    content += "</tr></tbody></table>";
-    return content;
 }
