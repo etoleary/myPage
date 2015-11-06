@@ -1,5 +1,5 @@
 /*
-  File: /~eoleary/js/validation.js
+  File: /~eoleary/js/dynamictable_v2.js
   This file will read input from a form and output a multiplication table, while
   alerting users immediately if they have made an error achieved through the use
   of the jQuery validate plugin.
@@ -131,7 +131,7 @@ function CreateNumberArray(start, end) {
     // calculate the total length of the array
     var num = Math.abs(end - start);
     
-    var increment = 1; /*May not need look at line 90*/
+    var increment = 1; 
     
     /*will always fill the top row from least to greatest, 
      * even if the user enters numbers from greatest to least (row start > row end)*/
@@ -159,7 +159,7 @@ function CreateNumberArray(start, end) {
 function CreateTable(rowArray, colArray) {
 
     // first print the top row by itself
-    var content =  "<table> <tbody id = 'formOutput'><tr><td></td>";
+    var content =  "<table><tbody id='formOutput'><tr><td></td>";
     for (var a = 0, b = colArray.length; a < b; a++)
     {
         content += "<td class='topRow'>" + colArray[a] + "</td>";
@@ -175,6 +175,7 @@ function CreateTable(rowArray, colArray) {
         {
             content += "<td>" + rowArray[i] * colArray[k] + "</td>";
         }
+           content += "</tr>";
     }
     content += "</tr></tbody></table>";
     return content;
