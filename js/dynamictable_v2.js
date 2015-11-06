@@ -97,26 +97,28 @@ function highlightError(str){
 
 
 function SubmitForm() {
- // get all 4 values entered from the form
-        var rowStart = $("#rowStart").val();
-        var rowEnd = $("#rowEnd").val();
-        var colStart = $("#colStart").val();
-        var colEnd = $("#colEnd").val();
-
-       
-        // convert the form input to integers, truncate any floating point numbers
-        rowStart = parseInt(rowStart);
-        rowEnd = parseInt(rowEnd);
-        colStart = parseInt(colStart);
-        colEnd = parseInt(colEnd);
-
-        // create arrays of each numbers in the initial rows and columns
-        var rowArray = CreateNumberArray(rowStart, rowEnd);
-        var colArray = CreateNumberArray(colStart, colEnd);
+    //clear any previous table
+    $("#formOutput").html("");
+    //get all 4 values entered from the form
+    var rowStart = $("#rowStart").val();
+    var rowEnd = $("#rowEnd").val();
+    var colStart = $("#colStart").val();
+    var colEnd = $("#colEnd").val();
 
 
-        //build a multiplication table and print it to the page
-        CreateTable(rowArray, colArray);
+    // convert the form input to integers, truncate any floating point numbers
+    rowStart = parseInt(rowStart);
+    rowEnd = parseInt(rowEnd);
+    colStart = parseInt(colStart);
+    colEnd = parseInt(colEnd);
+
+    // create arrays of each numbers in the initial rows and columns
+    var rowArray = CreateNumberArray(rowStart, rowEnd);
+    var colArray = CreateNumberArray(colStart, colEnd);
+
+
+    //build a multiplication table and print it to the page
+    CreateTable(rowArray, colArray);
 }//end of SubmitForm
 
 /*
