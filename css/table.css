@@ -3,7 +3,7 @@
   Author: Evan O'Leary
   Contact: evan_oleary@student.uml.edu
   Created on: October 18, 2015 
-  Updated on: October 20, 2015
+  Updated on: November 19, 2015
   This file contains the styling information for the dynamic table in assignment 6.
 */
 html{
@@ -96,7 +96,6 @@ td{
 /*styles the first row of data*/
 .topRow{
     font-weight: 600;
-    //padding: 0px 5px;
     text-align: center;
     border-style: solid;
     border-width: 1px; 
@@ -110,7 +109,6 @@ td{
 /*styles first column of data*/
 tr td:first-child{
     font-weight: 600;
-    //padding: 0px 5px;
     text-align: center;
     border-style: solid;
     border-width: 1px;
