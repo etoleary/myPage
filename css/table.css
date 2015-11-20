@@ -81,6 +81,14 @@ label.error {
     margin-left: 217px;
 }
 
+/*styling for sliders*/
+#rowStartSlider,#rowEndSlider,#colStartSlider,#colEndSlider{
+    display: inline-block;
+    margin-left: 217px; 
+    height: 10px;
+    width: 200px;
+}
+
 /*places table below form and adds scroll bar if table overflows*/ 
 #table{
     overflow: auto;
@@ -141,6 +149,7 @@ tbody tr:first-child td:first-child {
     border-top-color: #FFFFFF; /*white*/
     border-left-color: #FFFFFF; /*white*/
     border-bottom-color: #FFFFFF; /*white*/ 
+    opacity: 0; /*makes the box the color of the background because it is transparent*/
 }
 
 /*styles the last cell in the first row*/
