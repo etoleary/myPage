@@ -4,7 +4,7 @@
   Contact: evan_oleary@student.uml.edu
   Created on: October 18, 2015 
   Updated on: November 19, 2015
-  This file contains the styling information for the dynamic table in assignment 6.
+  This file contains the styling information for the dynamic table in assignment 6 and 8.
 */
 html{
     font-size: 12px;
@@ -29,30 +29,34 @@ body{
     margin-right: auto;
 }
 
+/*styling to make input boxes line up vertically and put spacing between the sliders*/
 input{
     display: inline-block;
     margin-right: 500px;
+    margin-top: 6px;
+    margin-bottom: 6px;
     float: right;
-    width: 100px;
+    width: 75px;
 }
 
+/*styling for the clear button*/
 input[type = "submit"]{
-    width: 75px; 
+    clear: right;
+    float: left;
+    margin-left: 217px;
+    margin-top: -5px; 
 }
 
 label{
     display: inline-block;
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 
 /*colors all astresiks red*/
 span[id ^= error]{
     color: #FF0000;/*red*/
 }
-
-/*space between slider and input box
-span[id ^= slider]{
-    padding-top: 1px;
-}*/
 
 /*color error message red*/
 #errorMessage{
@@ -67,6 +71,14 @@ span[id ^= slider]{
 label.error {
   padding-left: 10px;
   color: #FF0000; /* red */
+}
+
+/*styling for the clear button*/
+#clear{
+    display: inline-block;
+    float: left;
+    margin-top: 0px;
+    margin-left: 217px;
 }
 
 /*places table below form and adds scroll bar if table overflows*/ 
