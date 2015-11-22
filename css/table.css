@@ -49,28 +49,31 @@ input[type = "submit"]{
 
 label{
     display: inline-block;
-    margin-top: 6px;
+    margin-top: 10px;
     margin-bottom: 6px;
 }
 
-/*colors all astresiks red*/
-span[id ^= error]{
-    color: #FF0000;/*red*/
+/*
+    This is for the error messages that the jQuery plugin generates
+*/
+.error {
+  color: red;
+  font-style: italic;
+  font-size: small;
+  text-align: center;
 }
 
-/*color error message red*/
-#errorMessage{
-    color: #FF0000; /*red*/
-    font-size: small;
+/*  When an input is invalid, the jQuery Validation Plugin adds the class "error"
+    to the input. So why not make it obvious to the user which inputs aren't valid
+    by making a red border around the input? As soon as the input is valid this will
+    disappear since the jQuery plugin wil remove the class "error".  */
+input.error {
+  border: 2px solid red;
 }
 
-#myTabs{
-    margin-top: 250px;
-}
-/* set the color for the error messages for assignment 7 */
-label.error {
-  padding-left: 10px;
-  color: #FF0000; /* red */
+
+#tabs{
+    margin-top: 20px;
 }
 
 /*styling for the clear button*/
@@ -81,12 +84,22 @@ label.error {
     margin-left: 217px;
 }
 
-/*styling for sliders*/
+/*positioning for sliders*/
 #rowStartSlider,#rowEndSlider,#colStartSlider,#colEndSlider{
     display: inline-block;
     margin-left: 217px; 
     height: 10px;
     width: 200px;
+}
+
+#right{
+    display: inline-block;
+}
+
+#left{
+    overflow: auto;
+    display: inline-block;
+    margin-top: 20px;
 }
 
 /*places table below form and adds scroll bar if table overflows*/ 
@@ -146,9 +159,9 @@ tbody tr:first-child td:first-child {
     background-color: #FFFFFF; /*white*/
     border-style: solid;
     border-bottom-width: 1px;
-    border-top-color: #FFFFFF; /*white*/
-    border-left-color: #FFFFFF; /*white*/
-    border-bottom-color: #FFFFFF; /*white*/ 
+    border-top: none; /*no border*/
+    border-left: none; /*no border*/
+    border-bottom-color: #000000; /*black*/ 
     opacity: 0; /*makes the box the color of the background because it is transparent*/
 }
 
