@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!--
+      File: /~eoleary/assignment9.html
+      This file is for assignment 9 which will implement as close to a fully functional
+      Scrabble game as possible. 
+      Author: Evan O'Leary
+      Contact: evan_oleary@student.uml.edu 
+      Created on: December 1, 2015 
+      Updated on: December 8, 2015 -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        
+        <!-- jQuery UI stylesheet -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.min.css">
+        <!-- styles the table for assignment 9-->
+        <link rel="stylesheet" href="css/scrabble.css">
+        <!-- jQuery hosted by google -->
+         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+         <!-- jQuery UI hosted by google -->
+         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+         
+        
+        <!-- JS Global Variables 
+        <script src="js/scrabble/variables.js" type="text/javascript"></script>
+
+        <!-- Functions that the three buttons run are found here. "Submit", "Recall", "Reset" buttons.
+        <script src="js/scrabble/buttons.js" type="text/javascript"></script>
+
+        <!--  JS Utility functions for this Scrabble board game. Has the random function, find position functions,
+              and a few other misc. functions that are used throughout the reset of the JS files.
+        <script src="js/scrabble/util.js" type="text/javascript"></script>
+
+        <!--  Score functions that determine the score of the current word / total score if multiple
+              words are played. 
+        <script src="js/scrabble/score.js" type="text/javascript"></script>
+
+        <!--  Function that runs the jQuery UI draggable code. 
+        <script src="js/scrabble/draggable.js" type="text/javascript"></script>
+
+        <!--  Function that runs the jQuery UI droppable code.
+              NOTE: this is the heart of the Scrabble logic.
+              TODO: make so much of this code reusable by making functions
+                    for the parts that are CONSTANTLY repeated. 
+        <script src="js/scrabble/droppable.js" type="text/javascript"></script>
+
+        <!-- JS file to load the Scrabble game stuff on first page load after the DOM is loaded. -->
+        <script src="js/scrabble.js" type="text/javascript"></script>
+
+         <title>Assignment 9: Scrabble</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id = "allcontent">
+            <h1>Scrabble</h1>
+            <p>
+                Place Holder
+            </p>
+            <!-- 
+            Form that will not reload the page when submitted.
+            Each value submitted will be used in the javascript to
+            create the multiplication table . The error span is where an
+            asterisk will be placed if the user enters invalid input.
+            -->
+            <div id="right">
+                Word:<span id="word">___</span>
+                <div></div>
+                    Score:<span id="score">0</span>                     
+                </div>
+                
+            <!--Scrabble board-->
+                <div class="game_board">
+                    <table id="scrabble_board">
+                        <!--Row 1-->
+                        <tr>
+                        <td class="triple_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="triple_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td class="triple_word"></td>
+                    </tr>
+                    <!--Row 2-->
+                    <tr>
+                        <td></td>
+                        <td class="double_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="triple_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="triple_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_word"></td>
+                        <td></td>
+                    </tr>
+                    <!--Row 3-->
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td  class="double_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_word"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <!--Row 4-->
+                    <tr>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                    </tr>
+                    <!--Row 5-->
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                     <!--Row 6-->
+                    <tr>
+                        <td></td>
+                        <td class="triple_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="triple_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="triple_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="triple_letter"></td>
+                        <td></td>
+                    </tr>
+                      <!--Row 7-->
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                      <!--Row 8-->
+                    <tr>
+                        <td class="triple_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="star"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td class="triple_word"></td>
+                    </tr>
+                      <!--Row 9-->
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                      <!--Row 10-->
+                    <tr>
+                        <td></td>
+                        <td class="triple_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="triple_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="triple_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="triple_letter"></td>
+                        <td></td>
+                    </tr>
+                    <!--Row 11-->
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <!--Row 12-->
+                    <tr>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                    </tr>
+                    <!--Row 13-->
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td  class="double_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_word"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <!--Row 14-->
+                    <tr>
+                        <td></td>
+                        <td class="double_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="triple_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="triple_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_word"></td>
+                        <td></td>
+                    </tr>
+                    <!--Row 15-->
+                    <tr>
+                        <td class="triple_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="triple_word"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="double_letter"></td>
+                        <td></td>
+                        <td></td>
+                        <td class="triple_word"></td>
+                    </tr>
+                    </table>
+            </div>
+            <br><br>
+            
+          <div>
+          <img class="resize_rack" id="the_rack" src="img/scrabble/Scrabble_Rack.png">
+          <div id="rack"></div>
+        </div>
+            
+                <p id="clear">
+                    <button id="clearButton">Clear All Tabs</button>
+                </p>
+                
+                <br><br>
+                
+                <div id ="message"></div>
+                
+                <br><br>
+        </div>
+         <script>
+    /*  This code is from a Stackoverflow post about how to load a HTML document
+        into div in another HTML document.
+        I run this on every page I make so I can change 1 HTML file when I add assignments
+        vs changing 7+ HTML files.
+        From the following URLs:
+        https://learn.jquery.com/using-jquery-core/document-ready/
+        https://stackoverflow.com/questions/8988855/include-another-html-file-in-a-html-file
+    */
+    $( document ).ready(function() {
+        $("#NavBarHeader").load("html/navbar.html");
+        $("#TheFooter").load("html/footer.html");
+        load_scrabble_pieces();     // Load up the 7 random Scrabble pieces.
+        load_droppable_targets();   // Load up the 15 targets for the Scrabble pieces.
+    });
+  </script>
+    </body>
+</html>
