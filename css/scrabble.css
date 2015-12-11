@@ -20,6 +20,10 @@ body{
     margin:auto;
 }
 
+h1{
+    margin-left: 575px;
+}
+
 #allcontent {
     width: 800px;
     padding-top: 5px;
@@ -29,11 +33,39 @@ body{
     margin-right: auto;
 }
 
+#centered{
+    margin-left: 430px;
+}
+
+#rack_area{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#the_rack{
+    height: auto;
+    width: auto;
+    max-height: 300px;
+    max-width: 400px;
+}
+
+#button_score_center{
+    margin-left: 120px;
+}
+
+#score{
+    margin-left: 40px;
+}
+
+#word{
+    margin-left: 40px;
+}
+
 
 /*styling for the clear button*/
 #clear{
     display: inline-block;
-    //float: left;
+    /*float: left;*/
     margin-top: 0px;
     margin-left: 217px;
 }
@@ -41,7 +73,7 @@ body{
 /*The following css is modified from Jason Downing's implementation all his comments
 are left in as well*/
 table {
-  border: solid 5px black;
+  border: solid 3px black;
   margin-left: auto;
   margin-right: auto;
   table-layout: fixed;
@@ -49,7 +81,7 @@ table {
 
 td {
   background: #D2B48C;
-  border: solid 2px white;
+  border: solid 1px white;
   height: 50px;
   width: 50px;
   z-index: 3;   /*  THIS IS INCREDIBLY IMPORTANT. SEE THIS URL FOR DETAILS:
