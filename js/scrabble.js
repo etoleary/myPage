@@ -322,7 +322,7 @@ function load_droppable_pieces() {
  * of being modified so that when the user checks their word they will get feedback 
  * on whether it is a valid word in the English language.
  */
-function submit() {
+function check_word() {
     // The dictionary lookup object
     var dict = {};
 
@@ -339,7 +339,7 @@ function submit() {
     });
 
 // Modified to only pass in one word, which can then be verified.
-    function find_word(word) {
+    function get_word(word) {
         // See if it's in the dictionary
         if (dict[ word ]) {
             // If it is, return that word
